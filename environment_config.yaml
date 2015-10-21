@@ -1,0 +1,49 @@
+attributes:
+  scaleio_Admin:
+    value: ''
+    label: 'UserName'
+    description: 'ScaleIO Admin User Name'
+    weight: 5
+    type: "text"
+  scaleio_Password:
+    value: ''
+    label: 'Password'
+    description: 'ScaleIO Admin Password'
+    weight: 10
+    type: "text"
+  scaleio_GW:
+    value: ''
+    label: 'ScaleIO GW IP'
+    description: 'ScaleIO Gateway IP'
+    weight: 15
+    type: "text"
+  scaleio_mdm1:
+    value: ''
+    label: 'ScaleIO Primary IP'
+    description: 'ScaleIO Primary MDM IP'
+    weight: 16
+    type: "text"
+  scaleio_mdm2:
+    value: ''
+    label: 'ScaleIO Secondary IP'
+    description: 'ScaleIO Secondary MDM IP'
+    weight: 17
+    type: "text"
+  protection_domain:
+    value: ''
+    label: 'ScaleIO protection domain'
+    description: 'Protection domain for ScaleIO'
+    weight: 35
+    type: "text"
+  storage_pool_1:
+    value: ''
+    label: 'ScaleIO storage pool 1'
+    description: 'First storage pool for ScaleIO'
+    weight: 45
+    type: "text"
+  fault_sets:
+    value: ''
+    label: 'Fault sets list'
+    description: 'Comma separated list of fault sets'
+    weight: 60
+    type: "text"
