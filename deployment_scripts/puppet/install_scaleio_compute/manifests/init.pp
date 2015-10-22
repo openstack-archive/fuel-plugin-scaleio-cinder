@@ -5,7 +5,7 @@ class install_scaleio_compute
   $nova_service = 'openstack-nova-compute'
   $mdm_ip_1 = $plugin_settings['scaleio_mdm1']
   $mdm_ip_2 = $plugin_settings['scaleio_mdm2']
-  $scaleio_repo=$plugin_settings['scaleio_repo']
+
 
 #install ScaleIO SDC package  
   

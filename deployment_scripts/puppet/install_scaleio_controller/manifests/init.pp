@@ -7,7 +7,7 @@ class install_scaleio_controller
   $mdm_ip_2 = $plugin_settings['scaleio_mdm2']
   $admin =  $plugin_settings['scaleio_Admin']
   $password = $plugin_settings['scaleio_Password']
-  $scaleio_repo=$plugin_settings['scaleio_repo']
+ 
 #1. Install SDC package
   exec { "install_sdc1":    
     command => "/bin/bash -c \"MDM_IP=$mdm_ip_1,$mdm_ip_2 yum install -y EMC-ScaleIO-sdc\"",
@@ -31,7 +31,7 @@ class install_scaleio_controller
     before => File['cinder_scaleio.config'], 
   }
 
-  # 3. Create config for ScaleIO
+# 3. Create config for ScaleIO
   $cinder_scaleio_config = "[scaleio]
 rest_server_ip=$gw_ip
 rest_server_username=$admin

@@ -41,9 +41,3 @@ attributes:
     description: 'First storage pool for ScaleIO'
     weight: 45
     type: "text"
-  fault_sets:
-    value: ''
-    label: 'Fault sets list'
-    description: 'Comma separated list of fault sets'
-    weight: 60
-    type: "text"
