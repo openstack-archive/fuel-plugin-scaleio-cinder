@@ -1,6 +1,6 @@
-
-## Introduction
-
+===========================================================
+Introduction
+===========================================================
 Fuel plugin for ScaleIO for enabling OpenStack to work with an **External** ScaleIO deployment. This ScaleIO plugin for Fuel extends Mirantis OpenStack functionality by adding support for ScaleIO block storage.
 
 ScaleIO is a software-only solution that uses existing servers' local disks and LAN to create a virtual SAN that has all the benefits of external storage—but at a fraction of cost and complexity. ScaleIO utilizes the existing local internal storage and turns it into internal shared block storage.
@@ -33,8 +33,8 @@ Service Name | Description | Installed in |
 
 
 
-## Requirements
-
+Requirements
+===========================================================
 These are the plugin requirements: 
 
 
@@ -48,13 +48,13 @@ These are the plugin requirements:
 | Install ScaleIO Storage Data Client (SDC) in Controller and Compute Nodes| Plugin takes care of install|
 
 
-## Limitations
-
+Limitations
+===========================================================
 Currently Fuel doesn't support multi-backend storage.
 
 
-## Configuration
-
+Configuration
+===========================================================
 
 Plugin files and directories:
 

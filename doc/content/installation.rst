@@ -1,6 +1,6 @@
-
-### ScaleIO Cinder plugin installation
-
+===========================================================
+ScaleIO Cinder plugin installation
+===========================================================
 The first step is to install the ScaleIO Cinder plugin in the Fuel Master:
 
 1. Download the plugin from the [releases section](https://github.com/openstack/fuel-plugin-scaleio-cinder/releases "Releases Page") or from the [Fuel plugins catalog](https://www.mirantis.com/products/openstack-drivers-and-plugins/fuel-plugins/ "Fuel Plugins Catalog").
@@ -20,9 +20,9 @@ The first step is to install the ScaleIO Cinder plugin in the Fuel Master:
 ![Plugin Installation](https://github.com/openstack/fuel-plugin-scaleio-cinder/blob/master/doc/images/scaleio-cinder-install-1.png)
 
 
-
-### ScaleIO Cinder plugin configuration
-
+===========================================================
+ScaleIO Cinder plugin configuration
+===========================================================
 Once the plugin has been installed in the Master, we configure the nodes and set the parameters for the plugin:
 
 

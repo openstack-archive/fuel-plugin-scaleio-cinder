@@ -1,4 +1,6 @@
-## User Guide
+===========================================================
+User Guide
+===========================================================
 1.	Upload scaleio-cinder plugin code to the master node 
  ![user guide1 ](https://github.com/openstack/fuel-plugin-scaleio-cinder/blob/master/doc/images/installation/image001.png)
   ![user guide1 ](https://github.com/openstack/fuel-plugin-scaleio-cinder/blob/master/doc/images/installation/image002.png)  Build the code using fpb –build command
@@ -33,8 +35,8 @@
  ![user guide1 ](https://github.com/openstack/fuel-plugin-scaleio-cinder/blob/master/doc/images/installation/image014.png)
 
 
-### ScaleIO Cinder plugin OpenStack operations
-
+ScaleIO Cinder plugin OpenStack operations
+==================================================================
 
 Once the OpenStack Cluster is setup, we can setup ScaleIO Volumes. This is an example in how to attach a Volume to a running VM:  
 
