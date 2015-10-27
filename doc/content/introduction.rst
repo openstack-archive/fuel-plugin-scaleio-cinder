@@ -1,6 +1,7 @@
-=========================================================== Introduction
-=========================================================== Fuel plugin
-for ScaleIO for enabling OpenStack to work with an **External** ScaleIO
+=========================================================== 
+Introduction
+=========================================================== 
+Fuel plugin for ScaleIO for enabling OpenStack to work with an **External** ScaleIO
 deployment. This ScaleIO plugin for Fuel extends Mirantis OpenStack
 functionality by adding support for ScaleIO block storage.
 

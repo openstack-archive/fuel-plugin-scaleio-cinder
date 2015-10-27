@@ -1,6 +1,7 @@
-=========================================================== User Guide
-=========================================================== 1. Upload
-scaleio-cinder plugin code to the master node |user guide1| |user
+=========================================================== 
+User Guide
+=========================================================== 
+1. Upload scaleio-cinder plugin code to the master node |user guide1| |user
 guide2| Build the code using fpb –build command |user guide3|
 
 2.  Install scaleio-cinder plugin using fuel plugins –install command
