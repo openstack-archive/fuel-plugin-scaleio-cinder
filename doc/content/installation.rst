@@ -1,9 +1,10 @@
 Install ScaleIO Cinder Plugin
 =============================
-
 To install the ScaleIO-Cinder Fuel plugin:
 
-#. Download it from the `Fuel Plugins Catalog <https://www.mirantis.com/products/openstack-drivers-and-plugins/fuel-plugins/>`_
+#. Download it from the
+   `Fuel Plugins Catalog <https://www.mirantis.com/products/openstack-drivers-and-plugins/fuel-plugins/>`_.
+
 #. Copy the *rpm* file to the Fuel Master node:
    ::
 
@@ -22,58 +23,66 @@ To install the ScaleIO-Cinder Fuel plugin:
      [root@fuel-master ~]# fuel plugins
      id | name    | version | package_version
      ---|---------|---------|----------------
-     1  | scaleio-cinder | 1.0.0   | 1.0.0
-
-===========================================================
-ScaleIO Cinder plugin configuration
-===========================================================
-Once the plugin has been installed in the Master, we configure the nodes and set the parameters for the plugin:
+     1  | scaleio-cinder| 1.0.0   | 1.0.0
 
 
-1. Start by creating a new OpenStack environment following the https://docs.mirantis.com/openstack/fuel/fuel-6.1/user-guide.html#create-a-new-openstack-environment "Creating a new OpenStack environment") 
+.. raw:: pdf
 
-2. Configure your environment following the https://docs.mirantis.com/openstack/fuel/fuel-6.1/user-guide.html#configure-your-environment
+   PageBreak
 
-	.. image:: https://github.com/openstack/fuel-plugin-scaleio-cinder/blob/master/doc/images/scaleio-cinder-install-2.png
+Configure ScaleIO plugin
+------------------------
+Once the plugin has been copied and installed at the
+Fuel Master node, you can configure the nodes and set the parameters for the plugin:
 
-3. Open the **Settings tab** of the Fuel web UI and scroll down the page. Select the Fuel plugin check-box to enable ScaleIO Cinder plugin for Fuel:
+#. Start by creating a new OpenStack environment following the
+   `Mirantis OpenStack User Guide <https://docs.mirantis.com/openstack/fuel/fuel-6.1/user-guide.html#create-a-new-openstack-environment>`_.
 
-	.. image:: https://github.com/openstack/fuel-plugin-scaleio-cinder/blob/master/doc/images/scaleio-cinder-install-4.PNG
+#. `Configure your environment <https://docs.mirantis.com/openstack/fuel/fuel-6.1/user-guide.html#configure-your-environment>`_.
+
+	.. image:: images/scaleio-cinder-install-2.png
+
+#. Open the **Settings tab** of the Fuel web UI and scroll down the page.
+   Select the Fuel plugin checkbox to enable ScaleIO Cinder plugin for Fuel:
+
+	 .. image:: images/scaleio-cinder-install-4.PNG
+
+   +----------------------------+----------------------------------------------------+
+   |   Parameter name           |         Parameter description                      |
+   |                            |                                                    |
+   +============================+====================================================+
+   | userName                   |   The ScaleIO User name                            |
+   +----------------------------+----------------------------------------------------+
+   | Password                   | The ScaleIO password for the selected user name    |
+   +----------------------------+----------------------------------------------------+
+   | ScaleIO GW IP              | The IP address of the the ScaleIO Gateway service  |
+   +----------------------------+----------------------------------------------------+
+   | ScaleIO Primary IP         |   The ScaleIO cluster's primary IP address         |
+   +----------------------------+----------------------------------------------------+
+   | ScaleIO Secondary IP       |  The ScaleIO cluster's secondary IP address        |
+   +----------------------------+----------------------------------------------------+
+   | ScaleIO protection domain  |   Name of the ScaleIO's protection domain          |
+   +----------------------------+----------------------------------------------------+
+   | ScaleIO storage pool 1     |   Name of the first storage pool                   |
+   +----------------------------+----------------------------------------------------+
 	
-	**Plugin's parameters explanation:** 
-	
-	+-------------------------+---------------------------------------------------------+
-	|Parameter Name           |Parameter Description				    |
-	+=========================+=========================================================+
-	|userName                 |The ScaleIO User Name				    |
-	+-------------------------+---------------------------------------------------------+
-	|Password                 |The SclaeIO password for the selected user name	    |
-	+-------------------------+---------------------------------------------------------+
-	|ScaleIO GW IP            |The IP address of the the ScaleIO Gateway service	    |
-	+-------------------------+---------------------------------------------------------+
-	|ScaleIO Primary IP       |The ScaleIO cluster's primary IP address		    |
-	+-------------------------+---------------------------------------------------------+
-	|ScaleIO Secondary IP     |The ScaleIO cluster's secondary IP address		    |
-	+-------------------------+---------------------------------------------------------+
-	|ScaleIO protection domain|Name of the ScaleIO's protection domain		    |
-	+-------------------------+---------------------------------------------------------+
-	|ScaleIO storage pool 1   |Name of the first storage pool			    |
-	+-------------------------+---------------------------------------------------------+
-	
-	**Note:** Please refer to the ScaleIO documentation for more information on these parameters 
+	  .. note:: Please refer to the ScaleIO documentation for more information on these parameters.
 
-	This is an example of the ScaleIO configuration paremets populated: 
+    This is an example of the ScaleIO configuration parameters populated: 
 
-	.. image:: https://github.com/openstack/fuel-plugin-scaleio-cinder/blob/master/doc/images/scaleio-cinder-install-5.PNG
+	  .. image:: images/scaleio-cinder-install-5.PNG
 
-4. After the configuration is done, you can Add the nodes to the Openstack Deployment. 
-	.. image:: https://github.com/openstack/fuel-plugin-scaleio-cinder/blob/master/doc/images/scaleio-cinder-install-3.PNG
+#. After the configuration is done, you can add the nodes to the Openstack Deployment.
 
-**Note:** you can run the 
-check and https://docs.mirantis.com/openstack/fuel/fuel-6.1/user-guide.html#deploy-changes. 
+	  .. image:: images/scaleio-cinder-install-3.png
 
-After this is complete you should see a success message:
-	.. image:: https://github.com/openstack/fuel-plugin-scaleio-cinder/blob/master/doc/images/scaleio-cinder-install-complete.jpg
+#. You can run the network verification check and
+   `deploy changes <https://docs.mirantis.com/openstack/fuel/fuel-6.1/user-guide.html#deploy-changes>`_ then.
 
-**Note:** It make take an hour or more for the OpenStack deployment to complete, depending on your hardware configuration. 
+#. After deployment is completed, you should see a success message:
+
+	 .. image:: images/scaleio-cinder-install-complete.jpg
+
+.. note:: It may take an hour or more for the OpenStack deployment
+          to complete, depending on your hardware configuration. 
 
