@@ -12,38 +12,32 @@ shared block storage.
 
 The following diagram shows the plugin's high level architecture:
 
-.. figure:: https://github.com/openstack/fuel-plugin-scaleio-cinder/blob/master/doc/images/fuel-plugin-scaleio-cinder-1.jpg
-   :alt: ScaleIO Fuel plugin high level architecture
-
-   ScaleIO Fuel plugin high level architecture
+.. image:: doc/images/fuel-plugin-scaleio-cinder-1.jpg
 
 From the figure we can see that we need the following OpenStack roles
 and services:
 
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
-| Service/Role Name               | Description                                                                                                                                                                                                                                 | Installed in        |
-+=================================+=============================================================================================================================================================================================================================================+=====================+
-| Controller Node + Cinder Host   | A node that runs network, volume, API, scheduler, and image services. Each service may be broken out into separate nodes for scalability or availability. In addition this node is a Cinder Host, that contains the Cinder Volume Manager   | OpenStack Cluster   |
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
-| Compute Node                    | A node that runs the nova-compute daemon that manages Virtual Machine (VM) instances that provide a wide range of services, such as web applications and analytics.                                                                         | OpenStack Cluster   |
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+.. csv-table:: a title
+   :header: "Service Role/Name", "Description", "Installed in"
+   :widths: 50, 50, 50
+
+   "Controller Node + Cinder Host", "A node that runs network, volume, API, scheduler, and image services. Each service may be broken out into separate nodes for scalability or availability. In addition this node is a Cinder Host, that contains the Cinder Volume Manager", "OpenStack Cluster"
+   "Compute Node", "A node that runs the nova-compute daemon that manages Virtual Machine (VM) instances that provide a wide range of services, such as web applications and analytics", "OpenStack Cluster"
+
+
 
 In the **external ScaleIO cluster** we have installed the following
 roles and services:
 
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
-| Service Name                 | Description                                                                                                                                                                                                          | Installed in        |
-+==============================+======================================================================================================================================================================================================================+=====================+
-| SclaeIO Gateway (REST API)   | The ScaleIO Gateway Service, includes the REST API to communicate storage commands to the SclaeIO Cluster, in addtion this service is used for authentication and certificate management.                            | ScaleIO Cluster     |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
-| Meta-data Manager (MDM)      | Configures and monitors the ScaleIO system. The MDM can be configured in redundant Cluster Mode, with three members on three servers, or in Single Mode on a single server.                                          | ScaleIO Cluster     |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
-| Tie Breaker (TB)             | Tie Breaker service helps determining what service runs as a master vs. a slave                                                                                                                                      | ScaleIO Cluster     |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
-| Storage Data Server (SDS)    | Manages the capacity of a single server and acts as a back-end for data access.The SDS is installed on all servers contributing storage devices to the ScaleIO system. These devices are accessed through the SDS.   | ScaleIO Cluster     |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
-| Storage Data Client (SDC)    | A lightweight device driver that exposes ScaleIO volumes as block devices to the application that resides on the same server on which the SDC is installed.                                                          | Openstack Cluster   |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+.. csv-table:: a title
+   :header: "Service Role", "Description", "Installed in"
+   :widths: 50, 50, 50
+
+   "ScaleIO Gateway (REST API)", "The ScaleIO Gateway Service, includes the REST API to communicate storage commands to the SclaeIO Cluster, in addtion this service is used for authentication and certificate management.", "ScaleIO Cluster"
+   "Meta-data Manager (MDM)", "Configures and monitors the ScaleIO system. The MDM can be configured in redundant Cluster Mode, with three members on three servers, or in Single Mode on a single server.", "ScaleIO Cluster"    
+   "Tie Breaker (TB)", 'Tie Breaker service helps determining what service runs as a master vs. a slave.", "ScaleIO Cluster"                                                                                               
+   "Storage Data Server (SDS)", "Manages the capacity of a single server and acts as a back-end for data access.The SDS is installed on all servers contributing storage devices to the ScaleIO system. These devices are accessed through the SDS.", "ScaleIO Cluster"
+   "Storage Data Client (SDC)", "A lightweight device driver that exposes ScaleIO volumes as block devices to the application that resides on the same server on which the SDC is installed.", "Openstack Cluster"
 
 **Note:** for more information in how to deploy a ScaleIO Cluster,
 please refer to the ScaleIO manuals located in the download packages for
