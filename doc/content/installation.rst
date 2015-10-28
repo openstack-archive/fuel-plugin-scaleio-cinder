@@ -1,6 +1,5 @@
-====================================
 Install ScaleIO Cinder Plugin
-====================================
+=============================
 
 To install the MidoNet Fuel plugin:
 
