@@ -1,37 +1,31 @@
 =========================================================== 
 User Guide
 =========================================================== 
-1. Upload scaleio-cinder plugin code to the master node |user guide1| |user
-guide2| Build the code using fpb –build command |user guide3|
-
-2.  Install scaleio-cinder plugin using fuel plugins –install command
-    |user guide4|
-
-3.  Ensure that plugin is installed successfully using cli |user guide5|
-4.  Create environment with enabled plugin in fuel ui, lunch the fuel
+1. Install ScaleIO-Cinder plugin using the `Installation Guide <./installation.rst>`_
+2.  Create environment with enabled plugin in fuel ui, lunch the fuel
     site and check setting section to make sure the Scaleio-Cinder
     section exists
 
-5.  Add 3 nodes with Controller role and 1 node with Compute and another
+3.  Add 3 nodes with Controller role and 1 node with Compute and another
     role |user guide6| Picture of the External ScaleIO Cluster Running
     |user guide7| Retrive the external ScaleIO Cluster information. For
     our example these are the configuration settings: |user guide8| Use
     the ScaleIO Cluster information to update the ScaleIO Plugin
     information |user guide9|
 
-6.  Apply network settings
+4.  Apply network settings
 
-7.  Use the networking settings that are appropriate for your
+5.  Use the networking settings that are appropriate for your
     environment. For our example we used the default settings provided
     by Fuel: |user guide10|
 
-8.  Run network verification |user guide11|
+6.  Run network verification |user guide11|
 
-9.  Deploy the cluster |user guide12|
-10. Once the deployment finished successfully open Horizon Portal |user
+7.  Deploy the cluster |user guide12|
+8. Once the deployment finished successfully open Horizon Portal |user
     guide13|
 
-11. Check Storage tab under system information and make sure ScaleIO
+9. Check Storage tab under system information and make sure ScaleIO
     service is up and running |user guide14|
 
 ScaleIO Cinder plugin OpenStack operations
