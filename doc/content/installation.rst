@@ -3,7 +3,7 @@ Install ScaleIO Cinder Plugin
 
 To install the ScaleIO-Cinder Fuel plugin:
 
-#. Download it from the `Fuel Plugins Catalog<https://www.mirantis.com/products/openstack-drivers-and-plugins/fuel-plugins/>`_
+#. Download it from the `Fuel Plugins Catalog <https://www.mirantis.com/products/openstack-drivers-and-plugins/fuel-plugins/>`_
 #. Copy the *rpm* file to the Fuel Master node:
    ::
 
