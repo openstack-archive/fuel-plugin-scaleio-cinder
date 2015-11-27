@@ -41,13 +41,12 @@ Fuel Master node, you can configure the nodes and set the parameters for the plu
 #. `Configure your environment <https://docs.mirantis.com/openstack/fuel/fuel-6.1/user-guide.html#configure-your-environment>`_.
 
 	.. image:: images/scaleio-cinder-install-2.png
-	   :width: 50%
+
 	   	   
 #. Open the **Settings tab** of the Fuel web UI and scroll down the page.
    Select the Fuel plugin checkbox to enable ScaleIO Cinder plugin for Fuel:
 
-	.. image:: images/scaleio-cinder-install-4.PNG
-	   :width: 50%
+	 .. image:: images/scaleio-cinder-install-4.PNG
 	   
    +----------------------------+----------------------------------------------------+
    |   Parameter name           |         Parameter description                      |
@@ -72,13 +71,13 @@ Fuel Master node, you can configure the nodes and set the parameters for the plu
 
     This is an example of the ScaleIO configuration parameters populated: 
 
-	.. image:: images/scaleio-cinder-install-5.PNG
-	   :width: 50%
+	  .. image:: images/scaleio-cinder-install-5.PNG
+
 	   
 #. After the configuration is done, you can add the nodes to the Openstack Deployment.
 
 	.. image:: images/scaleio-cinder-install-3.png
-	   :width: 50%
+
 	   
 #. You can run the network verification check and
    `deploy changes <https://docs.mirantis.com/openstack/fuel/fuel-6.1/user-guide.html#deploy-changes>`_ then.
@@ -86,7 +85,7 @@ Fuel Master node, you can configure the nodes and set the parameters for the plu
 #. After deployment is completed, you should see a success message:
 
 	.. image:: images/scaleio-cinder-install-complete.jpg
-	   :width: 50%
+
 	   
 .. note:: It may take an hour or more for the OpenStack deployment
           to complete, depending on your hardware configuration. 
