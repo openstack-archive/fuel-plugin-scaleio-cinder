@@ -1,17 +1,17 @@
 # Plugin name
 name: scaleio-cinder
 # Human-readable name for your plugin
-title: Fuel plugin for ScaleIO
+title: ScaleIO Cinder plugin
 # Plugin version
 version: '1.0.0'
 # Description
-description: Enable ScaleIO as a storage backend
+description: Enable EMC ScaleIO as the block storage backend
 # Required fuel version
 fuel_version: ['6.1']
 # Specify license of your plugin
 licenses: ['Apache License Version 2.0']
 # Specify author or company name
-authors: ['EMC Code']
+authors: ['Magdy Salem, EMC', 'Adrian Moreno Martinez, EMC']
 # A link to the plugin's page
 homepage: 'https://github.com/stackforge/fuel-scaleio-cinder'
 # Specify a group which your plugin implements, possible options:
