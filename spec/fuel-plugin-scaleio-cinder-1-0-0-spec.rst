@@ -57,7 +57,7 @@ Performance Impact
 ------------------
 
 The ScaleIO-Cinder storage clusters provide high performance block storage for
-OpenStack envirnments, and therefore enabling the ScaleIO-Cinder driver in OpenStack
+OpenStack environment, and therefore enabling the ScaleIO-Cinder driver in OpenStack
 will greatly improve peformance of OpenStack.
 
 Other deployer impact

@@ -4,7 +4,7 @@ Overview
 
 The following diagram shows the plugin's high level architecture:
 
-.. image:: images/fuel-plugin-scaleio-cinder-1.jpg
+.. image:: images/fuel-plugin-scaleio-cinder-2.jpg
    :width: 100%
 
 From the figure we can see that we need the following OpenStack roles
@@ -87,15 +87,6 @@ Plugin files and directories:
 +------------------------------+--------------------------------------------------------------------------------------------------------------+
 | taks.yaml                    | Contains the information about what scripts to run and how to run them                                       |
 +------------------------------+--------------------------------------------------------------------------------------------------------------+
-
-This Fuel plugin will install the ScaleIO Storage Data Client (SDC)
-service on each Controller node and Compute node in the cluster. This is
-necessary in order for the VMs in each compute node to utilize ScaleIO
-Storage:
-
-.. image:: images/fuel-plugin-scaleio-cinder-2.jpg
-   :width: 100%
-
 
 Before starting a deployment there are some things that you should
 verify:

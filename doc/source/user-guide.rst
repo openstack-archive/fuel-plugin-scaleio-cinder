@@ -2,9 +2,9 @@
 
    PageBreak
 
-=========================================================== 
+========== 
 User Guide
-===========================================================
+==========
 
 #.  Install ScaleIO-Cinder plugin using the `Installation Guide <./installation.rst>`_.
 
