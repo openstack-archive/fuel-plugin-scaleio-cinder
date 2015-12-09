@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Code-Review+2: magdy salem <magdy.salem@emc.com>
+Workflow+1: magdy salem <magdy.salem@emc.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 09 Dec 2015 02:07:17 +0000
+Reviewed-on: https://review.openstack.org/255042
+Project: openstack/fuel-plugin-scaleio-cinder
+Branch: refs/heads/master
