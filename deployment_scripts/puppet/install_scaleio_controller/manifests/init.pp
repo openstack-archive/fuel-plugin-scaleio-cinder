@@ -7,7 +7,7 @@ class install_scaleio_controller
   $mdm_ip_2 = $plugin_settings['scaleio_mdm2']
   $admin =  $plugin_settings['scaleio_Admin']
   $password = $plugin_settings['scaleio_Password']
- 
+  $volume_type = "scaleio-thin" 
 #1. Install SDC package
   exec { "install_sdc1":    
     command => "/bin/bash -c \"MDM_IP=$mdm_ip_1,$mdm_ip_2 yum install -y EMC-ScaleIO-sdc\"",
@@ -88,5 +88,17 @@ verify_server_certificate=False
   }~>
   service { $services:
     ensure => running,
+  }->
+    exec { "Create Cinder volume type \'${volume_type}\'":
+    command => "bash -c 'source /root/openrc; cinder type-create ${volume_type}'",
+    path    => ['/usr/bin', '/bin'],
+    unless  => "bash -c 'source /root/openrc; cinder type-list |grep -q \" ${volume_type} \"'",
+  } ->
+
+  exec { "Create Cinder volume type extra specs for \'${volume_type}\'":
+    command => "bash -c 'source /root/openrc; cinder type-key ${volume_type} set sio:pd_name=${plugin_settings['protection_domain']} sio:provisioning_type=thin sio:sp_name=${plugin_settings['storage_pool_1']}'",
+    path    => ['/usr/bin', '/bin'],
+    onlyif  => "bash -c 'source /root/openrc; cinder type-list |grep -q \" ${volume_type} \"'",
   }
+
 }
