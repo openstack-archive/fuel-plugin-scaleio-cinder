@@ -3,11 +3,11 @@ name: scaleio-cinder
 # Human-readable name for your plugin
 title: ScaleIO Cinder plugin
 # Plugin version
-version: '1.0.0'
+version: '1.5.0'
 # Description
 description: Enable EMC ScaleIO as the block storage backend
 # Required fuel version
-fuel_version: ['6.1']
+fuel_version: ['6.1','7.0']
 # Specify license of your plugin
 licenses: ['Apache License Version 2.0']
 # Specify author or company name
@@ -24,5 +24,16 @@ releases:
     mode: ['ha', 'multinode']
     deployment_scripts_path: deployment_scripts/
     repository_path: repositories/centos
+  - os: ubuntu
+    version: 2014.2.2-6.1
+    mode: ['ha', 'multinode']
+    deployment_scripts_path: deployment_scripts/
+    repository_path: repositories/ubuntu
+  - os: ubuntu
+    version: 2015.1.0-7.0
+    mode: ['ha', 'multinode']
+    deployment_scripts_path: deployment_scripts/
+    repository_path: repositories/ubuntu	
 # Version of plugin package
 package_version: '2.0.0'
+
