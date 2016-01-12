@@ -21,7 +21,8 @@ None.
 ## Limitations
 
 The following table shows current limitation
-![ScaleIO Support](https://github.com/openstack/fuel-plugin-scaleio-cinder/tree/master/doc/source/images/SIO_Support.png)
+
+![ScaleIOSupport](https://github.com/openstack/fuel-plugin-scaleio-cinder/blob/master/doc/source/images/SIO_Support.png)
 
 
 # Installation Guide
