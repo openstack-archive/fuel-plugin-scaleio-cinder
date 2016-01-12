@@ -11,7 +11,7 @@ If you are looking to deploy a new ScaleIO cluster on Fuel slave nodes and repla
 
 | Requirement                      | Version/Comment |
 |----------------------------------|-----------------|
-| Mirantis OpenStack compatibility | 6.1             |
+| Mirantis OpenStack compatibility | 6.1/7.0         |
 
 
 ## Recommendations
@@ -20,7 +20,8 @@ None.
 
 ## Limitations
 
-None.
+The following table shows current limitation
+![ScaleIO Support](https://github.com/openstack/fuel-plugin-scaleio-cinder/tree/master/doc/source/images/SIO_Support.png)
 
 
 # Installation Guide

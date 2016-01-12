@@ -45,7 +45,7 @@ These are the plugin requirements:
 +--------------------------------------------------------------------------------+--------------------------------+
 | Requirement                                                                    | Version/Comment                |
 +================================================================================+================================+
-| Mirantis OpenStack compatibility                                               | 6.1                            |
+| Mirantis OpenStack compatibility                                               | 6.1 / 7.0                      |
 +--------------------------------------------------------------------------------+--------------------------------+
 | ScaleIO Version                                                                | >= 1.32                        |
 +--------------------------------------------------------------------------------+--------------------------------+
@@ -61,7 +61,10 @@ These are the plugin requirements:
 Limitations
 ===========
 
-Currently Fuel doesn't support multi-backend storage.
+Currently Fuel doesn't support multi-backend storage. Also the following table show the current support version and limitation
+
+.. image:: images/SIO_Support.png
+   :width: 100%
 
 Configuration
 =============
