@@ -49,7 +49,7 @@ These are the plugin requirements:
 +--------------------------------------------------------------------------------+--------------------------------+
 | ScaleIO Version                                                                | >= 1.32                        |
 +--------------------------------------------------------------------------------+--------------------------------+
-| Controller and Compute Nodes' Operative System                                 | CentOS/RHEL 6.5                |
+| Controller and Compute Nodes' Operative System                                 | CentOS 6.5/Ubuntu 14.04 LTS    |
 +--------------------------------------------------------------------------------+--------------------------------+
 | OpenStack Cluster (Controller/cinder-volume node) can access ScaleIO Cluster   | via a TCP/IP Network           |
 +--------------------------------------------------------------------------------+--------------------------------+

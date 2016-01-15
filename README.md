@@ -35,12 +35,12 @@ To install the ScaleIO-Cinder plugin, follow these steps:
 
 2. Copy the plugin file to the Fuel Master node. Follow the [Quick start guide](https://software.mirantis.com/quick-start/) if you don't have a running Fuel Master node yet.
     ```
-    $ scp scaleio-cinder-1.0-1.0.0-1.noarch.rpm root@<Fuel Master node IP address>:/tmp/
+    $ scp scaleio-cinder-1.5-1.5.0-1.noarch.rpm root@<Fuel Master node IP address>:/tmp/
     ```
 
 3. Log into the Fuel Master node and install the plugin using the fuel command line.
     ```
-    $ fuel plugins --install /tmp/scaleio-cinder-1.0-1.0.0-1.noarch.rpm
+    $ fuel plugins --install /tmp/scaleio-cinder-1.5-1.5.0-1.noarch.rpm
     ```
 
 4. Verify that the plugin is installed correctly.
@@ -92,7 +92,7 @@ need further instructions about how to build the Fuel Plugin Builder.*
 
 7. Now you have created an RPM file that you can install using the steps described above. The RPM file will be located in:
     ```
-    $ ./fuel-plugin-scaleio-cinder/scaleio-cinder-1.0-1.0.0-1.noarch.rpm
+    $ ./fuel-plugin-scaleio-cinder/scaleio-cinder-1.5-1.5.0-1.noarch.rpm
     ```
 
 # User Guide

@@ -16,7 +16,7 @@ class install_scaleio_controller::centos
 #2. Copy ScaleIO Files
   file { 'scaleio.py':
     path => '/usr/lib/python2.6/site-packages/cinder/volume/drivers/emc/scaleio.py',
-    source => 'puppet:///modules/install_scaleio_controller/scaleio.py',
+    source => 'puppet:///modules/install_scaleio_controller/6.1/scaleio.py',
     mode  => '644',
     owner => 'root',
     group => 'root',

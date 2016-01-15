@@ -7,66 +7,8 @@ class install_scaleio_controller::ubuntu
   $mdm_ip_2 = $plugin_settings['scaleio_mdm2']
   $admin =  $plugin_settings['scaleio_Admin']
   $password = $plugin_settings['scaleio_Password']
-  $volume_type = "scaleio-thin" 
-#1. Install SDC package
-   #file { 'emc-scaleio-sdc.deb':
-   # path  => '/tmp/emc-scaleio-sdc.deb',
-   # source => 'puppet:///modules/install_scaleio_controller/emc.deb',
-   # mode  => '644',
-   # owner => 'root',
-   # group => 'root',
-# }->
-
-# exec {"Install sdc":
-#    command => "bash -c 'dpkg -i /tmp/emc-scaleio-sdc.deb'",
-#    path    =>  ['/usr/bin', '/bin','/usr/local/sbin','/usr/sbin','/sbin' ],
-# }->
-
-  package {'emc-scaleio-sdc':
-    ensure => installed ,
-  }->
- exec {"Add MDM to drv-cfg":
-    command => "bash -c 'echo mdm  ${mdm_ip_1} >>/bin/emc/scaleio/drv_cfg.txt'",
-    path    =>  ['/usr/bin', '/bin','/usr/local/sbin','/usr/sbin','/sbin' ],
-
- }->
-
-
- exec {"Start SDC":
-    command => "bash -c '/etc/init.d/scini restart'",
-    path    =>  ['/usr/bin', '/bin','/usr/local/sbin','/usr/sbin','/sbin' ],
-
- }->
-
-#2. Copy ScaleIO Files
-  if(hiera('fuel_version') == '6.1') {
-	  file { 'scaleio_6.py':
-		path => '/usr/lib/python2.7/dist-packages/cinder/volume/drivers/emc/scaleio.py',
-		source => 'puppet:///modules/install_scaleio_controller/6.1/scaleio.py',
-		mode  => '644',
-		owner => 'root',
-		group => 'root',
-	  }
-  
-  }else{
-	  file { 'scaleio_7.py':
-		path  => '/usr/lib/python2.7/dist-packages/nova/virt/libvirt/driver.py',
-		source => 'puppet:///modules/install_scaleio_controller/7.0/scaleio.py',
-		mode  => '644',
-		owner => 'root',
-		group => 'root',
-		notify => Service[$nova_service],  
-	  } 
-  } ->
-  
-  file { 'scaleio.filters':
-    path => '/etc/cinder/rootwrap.d/scaleio.filters',
-    source => 'puppet:///modules/install_scaleio_controller/scaleio.filters',
-    mode  => '644',
-    owner => 'root',
-    group => 'root',
-    before => File['cinder_scaleio.config'], 
-  }
+  $volume_type = "scaleio-thin"
+  $version = hiera('fuel_version')
 
 # 3. Create config for ScaleIO
   $cinder_scaleio_config = "[scaleio]
@@ -80,6 +22,55 @@ round_volume_capacity=True
 force_delete=True
 verify_server_certificate=False
 "
+  
+if($version == '6.1') {
+          file { 'scaleio_6.py':
+                path => '/usr/lib/python2.7/dist-packages/cinder/volume/drivers/emc/scaleio.py',
+                source => 'puppet:///modules/install_scaleio_controller/6.1/scaleio.py',
+                mode  => '644',
+                owner => 'root',
+                group => 'root',
+          }
+
+}
+else
+{
+          file { 'scaleio_7.py':
+                path  => '/usr/lib/python2.7/dist-packages/cinder/volume/drivers/emc/scaleio.py',
+                source => 'puppet:///modules/install_scaleio_controller/7.0/scaleio.py',
+                mode  => '644',
+                owner => 'root',
+                group => 'root',
+
+          }
+  }  
+
+ package {'emc-scaleio-sdc':
+    ensure => installed ,
+ }->
+
+ exec {"Add MDM to drv-cfg":
+    command => "bash -c 'echo mdm  ${mdm_ip_1} >>/bin/emc/scaleio/drv_cfg.txt'",
+    path    =>  ['/usr/bin', '/bin','/usr/local/sbin','/usr/sbin','/sbin' ],
+
+ }->
+
+exec {"Start SDC": 
+    command => "bash -c '/etc/init.d/scini restart'",
+    path    =>  ['/usr/bin', '/bin','/usr/local/sbin','/usr/sbin','/sbin' ],
+
+ }->
+
+file { 'scaleio.filters':
+    path => '/etc/cinder/rootwrap.d/scaleio.filters',
+    source => 'puppet:///modules/install_scaleio_controller/scaleio.filters',
+    mode  => '644',
+    owner => 'root',
+    group => 'root',
+    before => File['cinder_scaleio.config'], 
+  }->
+
+# 3. Create config for ScaleIO
 
   file { 'cinder_scaleio.config':
     ensure  => present,

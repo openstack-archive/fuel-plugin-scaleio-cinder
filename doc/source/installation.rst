@@ -8,14 +8,14 @@ To install the ScaleIO-Cinder Fuel plugin:
 #. Copy the *rpm* file to the Fuel Master node:
    ::
 
-      [root@home ~]# scp scaleio-cinder-1.0-1.0.0-1.noarch.rpm root@fuel:/tmp
+      [root@home ~]# scp scaleio-cinder-1.5-1.5.0-1.noarch.rpm root@fuel:/tmp
 
 #. Log into Fuel Master node and install the plugin using the
-   `Fuel CLI <https://docs.mirantis.com/openstack/fuel/fuel-6.1/user-guide.html#using-fuel-cli>`_:
+   `Fuel CLI <https://docs.mirantis.com/openstack/fuel/fuel-7.0/user-guide.html#using-fuel-cli>`_:
 
    ::
 
-      [root@fuel ~]# fuel plugins --install scaleio-cinder-1.0-1.0.0-1.noarch.rpm
+      [root@fuel ~]# fuel plugins --install scaleio-cinder-1.5-1.5.0-1.noarch.rpm
 
 #. Verify that the plugin is installed correctly:
    ::
@@ -23,7 +23,7 @@ To install the ScaleIO-Cinder Fuel plugin:
      [root@fuel-master ~]# fuel plugins
      id | name          | version | package_version
      ---|---------------|---------|----------------
-     1  | scaleio-cinder| 1.0.0   | 1.0.0
+     1  | scaleio-cinder| 1.5.0   | 2.0.0
 
 
 .. raw:: pdf
@@ -36,9 +36,9 @@ Once the plugin has been copied and installed at the
 Fuel Master node, you can configure the nodes and set the parameters for the plugin:
 
 #. Start by creating a new OpenStack environment following the
-   `Mirantis OpenStack User Guide <https://docs.mirantis.com/openstack/fuel/fuel-6.1/user-guide.html#create-a-new-openstack-environment>`_.
+   `Mirantis OpenStack User Guide <https://docs.mirantis.com/openstack/fuel/fuel-7.0/user-guide.html#create-a-new-openstack-environment>`_.
 
-#. `Configure your environment <https://docs.mirantis.com/openstack/fuel/fuel-6.1/user-guide.html#configure-your-environment>`_.
+#. `Configure your environment <https://docs.mirantis.com/openstack/fuel/fuel-7.0/user-guide.html#configure-your-environment>`_.
 
 	.. image:: images/scaleio-cinder-install-2.png
 
@@ -80,7 +80,7 @@ Fuel Master node, you can configure the nodes and set the parameters for the plu
 
 	   
 #. You can run the network verification check and
-   `deploy changes <https://docs.mirantis.com/openstack/fuel/fuel-6.1/user-guide.html#deploy-changes>`_ then.
+   `deploy changes <https://docs.mirantis.com/openstack/fuel/fuel-7.0/user-guide.html#deploy-changes>`_ then.
 
 #. After deployment is completed, you should see a success message:
 

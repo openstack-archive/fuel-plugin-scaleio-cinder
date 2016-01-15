@@ -27,7 +27,7 @@ class install_scaleio_compute::centos
 
   file { 'scaleiolibvirtdriver.py':
     path  => '/usr/lib/python2.6/site-packages/nova/virt/libvirt/scaleiolibvirtdriver.py',
-    source => 'puppet:///modules/install_scaleio_compute/scaleiolibvirtdriver.py',
+    source => 'puppet:///modules/install_scaleio_compute/6.1/scaleiolibvirtdriver.py',
     mode  => '644',
     owner => 'root',
     group => 'root',
