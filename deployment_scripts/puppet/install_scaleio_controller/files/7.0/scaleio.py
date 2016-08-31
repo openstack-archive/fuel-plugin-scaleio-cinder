@@ -970,7 +970,7 @@ class ScaleIODriver(driver.VolumeDriver):
                 verify=verify_cert)
             response = r.json()
             LOG.info("query capacity stats response: %s" % response)
-            for res in response.itervalues():
+            for res in response.values():
                 capacityInUse = res['capacityInUseInKb']
                 capacityLimit = res['capacityLimitInKb']
                 total_capacity_gb = capacityLimit / 1048576
