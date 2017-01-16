@@ -56,7 +56,7 @@ Fuel Master node, you can configure the nodes and set the parameters for the plu
    +----------------------------+----------------------------------------------------+
    | Password                   | The ScaleIO password for the selected user name    |
    +----------------------------+----------------------------------------------------+
-   | ScaleIO GW IP              | The IP address of the the ScaleIO Gateway service  |
+   | ScaleIO GW IP              | The IP address of the ScaleIO Gateway service      |
    +----------------------------+----------------------------------------------------+
    | ScaleIO Primary IP         |   The ScaleIO cluster's primary IP address         |
    +----------------------------+----------------------------------------------------+
